@@ -1,0 +1,10 @@
+version: '2'
+services:
+  template-flink:
+    build: .
+    ports:
+      - "8086:8086"
+    volumes:
+      # Add route to the client config
+      - /Users/philippzehnder/.streampipes:/root/.streampipes
+
