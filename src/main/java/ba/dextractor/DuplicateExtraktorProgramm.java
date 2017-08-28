@@ -1,4 +1,4 @@
-package weather;
+package ba.dextractor;
 
 import java.util.Map;
 

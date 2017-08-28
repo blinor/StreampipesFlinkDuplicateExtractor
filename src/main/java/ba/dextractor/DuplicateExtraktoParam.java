@@ -1,4 +1,4 @@
-package weather;
+package ba.dextractor;
 
 import org.streampipes.model.impl.graph.SepaInvocation;
 import org.streampipes.wrapper.BindingParameters;

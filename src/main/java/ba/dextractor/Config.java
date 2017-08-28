@@ -1,4 +1,4 @@
-package weather;
+package ba.dextractor;
 
 //public enum Config {
 //
@@ -21,7 +21,7 @@ public enum Config {
 	INSTANCE;
 
 	private SpConfig config;
-	public static final String JAR_FILE = "./streampipes-templates-flink.jar";
+	public static final String JAR_FILE = "./dextractor.jar";
 
 	private final static String HOST = "host";
 	private final static String PORT = "port";

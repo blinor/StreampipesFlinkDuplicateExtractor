@@ -1,9 +1,8 @@
-package weather;
+package ba.dextractor;
 
 
 import org.streampipes.container.init.DeclarersSingleton;
 import org.streampipes.container.standalone.init.StandaloneModelSubmitter;
-import org.streampipes.templates.sources.template.TemplateSource;
 
 public class FlinkInit extends StandaloneModelSubmitter {
 

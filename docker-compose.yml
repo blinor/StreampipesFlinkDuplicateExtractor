@@ -1,10 +1,10 @@
 version: '2'
 services:
-  template-flink:
+  dextractor:
     build: .
     ports:
       - "8086:8086"
     volumes:
       # Add route to the client config
-      - /Users/philippzehnder/.streampipes:/root/.streampipes
+      - \Users\micha\bachelorarbeit\weather:/root/.ba/dextractor
 
