@@ -16,7 +16,7 @@ public class FlinkInit extends StandaloneModelSubmitter {
 ;
 
         DeclarersSingleton.getInstance().setHostName("10.0.75.1");
-        DeclarersSingleton.getInstance().setPort(1010);
+        DeclarersSingleton.getInstance().setPort(8086);
         new FlinkInit().init();
     }
 
