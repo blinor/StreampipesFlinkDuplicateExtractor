@@ -20,7 +20,7 @@ public class DuplicateExtraktorProgramm extends FlinkSepaRuntime<DuplicateExtrak
 
 	@Override
 	protected DataStream<Map<String, Object>> getApplicationLogic(DataStream<Map<String, Object>>... arg0) {
-		return arg0[0].flatMap(new DuplicatExtraktor(params.getPropertyName(), params.getTimeWindowValue(), params.getTimestamp()));
+		return arg0[0].flatMap(new DuplicatExtraktor(params.getPropertyName(), params.getTimeWindowValue(), params.getTimestamp())).setParallelism(1);
 	}
 
 }

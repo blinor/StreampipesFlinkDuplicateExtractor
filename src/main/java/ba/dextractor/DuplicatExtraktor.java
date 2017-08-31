@@ -25,6 +25,7 @@ public class DuplicatExtraktor implements FlatMapFunction<Map<String, Object>, M
 		this.timestamp = time;
 		this.keyMap = new HashMap<>();
 	}
+	//TODO state Flink 
 
 	public void flatMap(Map<String, Object> in, Collector<Map<String, Object>> out) throws Exception {
 		if (keyMap.containsKey(in.get(propertyName))) {
@@ -37,12 +38,12 @@ public class DuplicatExtraktor implements FlatMapFunction<Map<String, Object>, M
 				keyMap.put((String) in.get(propertyName), test);
 				out.collect(in);
 //				System.out.println("Updated: " + in.toString());
-				System.out.println(in.get(propertyName));
+//				System.out.println(in.get(propertyName));
 			}
 		} else {
 			keyMap.put((String) in.get(propertyName), ((Long) in.get(timestamp)).longValue());
 			out.collect(in);
-			System.out.println(in.get(propertyName));
+//			System.out.println(in.get(propertyName));
 //			System.out.println("Newly added " + in.get(propertyName).toString());
 		}
 	}

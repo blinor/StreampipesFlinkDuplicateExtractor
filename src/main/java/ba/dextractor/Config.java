@@ -35,9 +35,9 @@ public enum Config {
 	private final static String ZOOKEEPER_PORT = "zookeeper_port";
 
 	Config() {
-		config = SpConfig.getSpConfig("pe/org.streampipes.pe.mixed.flink");
+		config = SpConfig.getSpConfig("pe/org.streampipes.biggis.pe.ba.dextractor");
 
-		config.register(HOST, "pe-flink-samples", "Hostname for the pe mixed flink component");
+		config.register(HOST, "dextractor", "Hostname for the pe mixed flink component");
 		config.register(PORT, 8090, "Port for the pe mixed flink component");
 		config.register(FLINK_HOST, "jobmanager", "Host for the flink cluster");
 		config.register(FLINK_PORT, 6123, "Port for the flink cluster");
