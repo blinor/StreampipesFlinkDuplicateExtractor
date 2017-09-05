@@ -14,11 +14,10 @@ import org.streampipes.wrapper.flink.FlinkSepaRuntime;
 public class DuplicateExtraktorCont extends AbstractFlinkAgentDeclarer<DuplicateExtraktoParam> {
 
 	public SepaDescription declareModel() {
-		// TODO Auto-generated method stub
 		return ProcessingElementBuilder.create("duplicateExtractor", "Duplicat Extractor", "Only let new Data trough")
 				.stream1PropertyRequirementWithUnaryMapping(EpRequirements.anyProperty(), "property-filter", "The property to filter", "description" )
 				.stream1PropertyRequirementWithUnaryMapping(EpRequirements.timestampReq(), "Timestamp", "Timestamp to compare", "description" )
-				.requiredIntegerParameter("time-window-value", "", "")
+				.requiredIntegerParameter("time-window-value", "Time in seconds the new Value must be newer", "")
 				.outputStrategy(OutputStrategies.keep())
 				.supportedProtocols(SupportedProtocols.kafka()).supportedFormats(SupportedFormats.jsonFormat()).build();
 	}
@@ -32,7 +31,6 @@ public class DuplicateExtraktorCont extends AbstractFlinkAgentDeclarer<Duplicate
 		String timestamp = extractor.mappingPropertyValue("Timestamp");
 		Integer timeWindowValue = extractor.singleValueParameter("time-window-value", Integer.class);
 		
-		// TODO Auto-generated method stub
 		DuplicateExtraktoParam staticParams = new DuplicateExtraktoParam(arg0, propertyName, timeWindowValue, timestamp);
 		return new DuplicateExtraktorProgramm(staticParams);
 	}
