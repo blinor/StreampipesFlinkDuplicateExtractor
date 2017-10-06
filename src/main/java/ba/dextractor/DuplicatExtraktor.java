@@ -6,6 +6,10 @@ import java.util.Map;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.util.Collector;
 
+/**
+ * @author Michael Jahns
+ * Here is finally the programlogic to filter the stream
+ */
 public class DuplicatExtraktor implements FlatMapFunction<Map<String, Object>, Map<String, Object>> {
 
 	private static final long serialVersionUID = 1L;
@@ -23,6 +27,9 @@ public class DuplicatExtraktor implements FlatMapFunction<Map<String, Object>, M
 
 	}
 
+	/* (non-Javadoc)
+	 * @see org.apache.flink.api.common.functions.FlatMapFunction#flatMap(java.lang.Object, org.apache.flink.util.Collector)
+	 */
 	public void flatMap(Map<String, Object> in, Collector<Map<String, Object>> out) {
 
 		Long old = keyMap.get(in.get(propertyName));
